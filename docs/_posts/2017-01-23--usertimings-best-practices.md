@@ -16,7 +16,7 @@ So what's the big deal? Well they decided to implement their user timings to use
 
 A few weeks ago after we noticed these rogue usertimings filling our poor servers we decided to blacklist google's user timings until we could implement a more robust solution. Luckly one best practice that google followed was namespacing their user timings with `goog_`. That allows us to easily remove these timings since they are not really relevant for our performance tracking. 
 
-With the latest release we probably will continue to permenately blacklist `goog_`, but with that we will have a whitelist in which a user will be able to supply a regex that will restrict what user timings are reported on and sent to our currently supported TSDB of graphite and InfluxDB. You should be able to do this by passing `--browsertime.userTimingWhitelist <some regex>`
+With the latest release we probably will continue to permenately blacklist `goog_`, but with that we will have a whitelist in which a user will be able to supply a regex that will restrict what user timings are reported on and sent to our currently supported TSDB of graphite and InfluxDB. You should be able to do this by passing `--userTimingWhitelist <some regex>`
 
 
 With that all said and the whitelist implemented I think the following are generally best practice for use of the User Timings that are supported in modern browsers
@@ -27,4 +27,4 @@ With that all said and the whitelist implemented I think the following are gener
 
 With all this said Happy New year everyone!
 
-/Peter, Tobias, and Jonathan
+/Jonathan
