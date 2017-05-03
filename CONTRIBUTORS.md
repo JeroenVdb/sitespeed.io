@@ -2,8 +2,12 @@ Many many many thanks to:
 * Matthew Harrison-Jones (@matthojo)
 * Moos (@moos)
 * Örjan Sjöholm (@orjan)
-* Abha Gupta (@abhagupta) 
+* Abha Gupta (@abhagupta)
 * jpvincent (@jpvincent)
+* Jeroen Van den Berghe (@JeroenVdb)
+* Jordan Jethwa (@jjethwa)
+* Pascal Borreli (@pborreli)
+* Radu Micu (@radum)
 
 3.X and earlier:
 * Tom Sutton (@tomsutton1984)

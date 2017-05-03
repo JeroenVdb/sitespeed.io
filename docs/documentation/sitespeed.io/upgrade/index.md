@@ -15,15 +15,17 @@ twitterdescription: Upgrade 3 -> 4
 * Lets place the TOC here
 {:toc}
 
-Upgrading is just updating to the new version. There's a couple of important thing that has changed.
+Upgrading to the newest version from 3.x? There are a couple of important things that have changed.
 
 ## Graphite keys
-The keys in Graphite has a new structure. The reason is that we wants to have a generic solution where we can use the same dashboards for whatever site and we want to follow the new data structure. If old data is important to you, you need to run multiple instances for a while, one with 3.x and one with 4 and have multiple dashboards, and then when you have the history, make the switch to the 4.0 dashboards.
+The keys in Graphite have a new structure. The reason for this is that we wants to have a generic solution where we can use the same dashboards for any site. If old data is important to you, you will need to run multiple instances for a while, one with 3.x and one with 4/5.x and have multiple dashboards, once you are comfortable with the newer dashboards and have the history, make the switch to the 4/5.x dashboards.
 
 ## CLI mapping
-A lot changed in the CLI and the easiest way for you is just to run sitespeed.io with <code>--help</code> to see what you can use. You can also check this mapping.
+A lot has changed in the CLI and the easiest way for you to understand what options are available is to just run sitespeed.io with <code>--help</code>. You can also check this mapping to get an idea of what has changed.
 
-| 3.x      | 4.0         | Description |
+<div id="upgradeTable" markdown="1">
+
+| 3.x      | 4.x / 5.x         | Description |
 |:------------|:-------------------|:-------------|
 | `-u <URL>, --url <URL>` | N/A     | The start url that will be used when crawling. |
 | `-f <FILE>, --file <FILE>` | N/A | The path to a plain text file with one URL on each row. Each URL will be analyzed. |
@@ -76,7 +78,7 @@ A lot changed in the CLI and the easiest way for you is just to run sitespeed.io
 | `--graphitePort <INTEGER>` | `--graphite.port <INTEGER>` | The Graphite port.  [2003] |
 | `--graphiteNamespace <NAMESPACE>` | `--graphite.namespace <NAMESPACE>` | The namespace of the data sent to Graphite.  [sitespeed.io] |
 | `--graphiteData` | `--metrics.filter` | Choose which data to send to Graphite by a comma separated list. Default all data is sent. [summary,rules,pagemetrics,timings,requests,domains]  [all] |
-| `--graphiteUseQueryParameters` | `--graphite.includeQueryParams` | Choose if you want to use query paramaters from the URL in the Graphite keys or not |
+| `--graphiteUseQueryParameters` | `--graphite.includeQueryParams` | Choose if you want to use query parameters from the URL in the Graphite keys or not |
 | `--graphiteUseNewDomainKeyStructure` | N/A | Use the updated domain section when sending data to Graphite "http.www.sitespeed.io" to "http.www_sitespeed_io" (issue #651) |
 | `--gpsiKey` | `--gpsi.key` | Your Google API Key, configure it to also fetch data from Google Page Speed Insights. |
 | `--noYslow` | N/A | Set to true to turn off collecting metrics using YSlow. |
@@ -90,9 +92,11 @@ A lot changed in the CLI and the easiest way for you is just to run sitespeed.io
 | `--postURL <URL>` | N/A | The full URL where the result JSON will be sent by POST. Warning: Testing many pages can make the result JSON massive. |
 | `--phantomjsPath <PATH>` | N/A | The full path to the phantomjs binary, to override the supplied version |
 
+</div>
+
 ## Docker
 
-With the new container you don't need to tell it to start sitespeed.io, just do:
+With the 4/5.x containers you no longer need to tell it to start sitespeed.io:
 
 ~~~ bash
 $ docker run --privileged --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io https://www.sitespeed.io/

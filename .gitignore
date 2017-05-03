@@ -6,3 +6,5 @@ node_modules
 sitespeed-result
 configs
 docs/_site
+yarn.lock
+.tern-project
